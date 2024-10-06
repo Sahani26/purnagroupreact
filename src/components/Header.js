@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
-import "../style/header.css"
-import mainlogo from "../assets/mainlogo.png"
-import menu from "../assets/menu.png"
-import close from "../assets/close.png"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useState } from 'react';
+import "../style/header.css";
+import mainlogo from "../assets/mainlogo.png";
+import menu from "../assets/menu.png";
+import close from "../assets/close.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Header() {
-    const [isActive, setIsActive] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Changed to false to indicate the menu is closed by default
 
-    const toggleClass = () => {
-        setIsActive(!isActive);
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
+
     return (
         <>
-
             <header>
-                <div className="head_plane  webheader">
+                <div className="head_plane webheader">
                     <div className="header_area">
                         <div className="hrader_items">
                             <div className="main_logo">
@@ -37,7 +37,7 @@ export default function Header() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="hrader_items ">
+                        <div className="hrader_items">
                             <div className="sub_logo">
                                 <img src="https://teslapowerusa.com/assets/images/tesla-logo-1.png" alt="" />
                             </div>
@@ -45,43 +45,32 @@ export default function Header() {
                     </div>
                 </div>
 
-
-
                 <div className="responsive_header">
-                    <div className="head_plane  mobileheader">
+                    <div className="head_plane mobileheader">
                         <div className="header_area">
                             <div className="hrader_items">
                                 <div className="main_logo">
-
-
                                     <img src={mainlogo} alt="" />
-
                                 </div>
-                            
                             </div>
-                            <div className="hrader_items ">
+                            <div className="hrader_items">
                                 <div className="sub_logo">
-                                    <a href="./main_page.html">  <img src="https://teslapowerusa.com/assets/images/tesla-logo-1.png" alt="" /></a>
+                                    <a href="./main_page.html">
+                                        <img src="https://teslapowerusa.com/assets/images/tesla-logo-1.png" alt="" />
+                                    </a>
                                 </div>
                             </div>
                             <div className="menuline" id="menuopen">
-                                <button onClick={toggleClass}>
+                                <button onClick={toggleMenu}>
                                     <img src={menu} alt="" />
                                 </button>
-
                             </div>
                         </div>
-
                     </div>
-                    {/* <div className="hrader_items mobile_mennnu" > */}
-                    <div className={isActive ? 'hrader_items mobile_mennnu' : 'hrader_items mobile_mennnu menu_on'} >
-                        {/* <div className="header_heading">
-                    <h1><span>PURNA </span>GROUP</h1>
-                </div>   */}
+                    <div className={isMenuOpen ? 'hrader_items mobile_mennnu menu_on' : 'hrader_items mobile_mennnu'}>
                         <div className="closer_menu" id="close_menu">
-                            {/* <!-- <i className="fa-regular fa-circle-xmark"></i> --> */}
-                            <button onClick={toggleClass}>
-                                Toggle Class
+                            <button onClick={toggleMenu}>
+                               close
                             </button>
                         </div>
                         <div className="header_option">
@@ -95,14 +84,10 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="bank_div">
-
+                        {/* Add bank related content if necessary */}
                     </div>
                 </div>
             </header>
-
-
-
-
         </>
-    )
+    );
 }

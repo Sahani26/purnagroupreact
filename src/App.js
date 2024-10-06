@@ -11,10 +11,10 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Footer />} />
        
       </Routes>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   </Router>
 
