@@ -70,11 +70,7 @@ export default function Header() {
                     <div className={isMenuOpen ? 'hrader_items mobile_mennnu menu_on' : 'hrader_items mobile_mennnu'}>
                         <div className="closer_menu" id="close_menu">
                             <button onClick={toggleMenu}>
-<<<<<<< HEAD
-                               close
-=======
-                                Close
->>>>>>> c32fafc99f9b2bda2dff7cdae0bd34c3100e28e2
+                              close
                             </button>
                         </div>
                         <div className="header_option">
