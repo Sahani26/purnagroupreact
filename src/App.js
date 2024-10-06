@@ -1,8 +1,9 @@
  
  import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
  import Header from "./components/Header";
- import Main from "./components/Main";
+ import Energy from "./components/Energy";
  import Footer from './components/Footer'
+ 
  
  
 function App() {
@@ -11,10 +12,10 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Footer />} />
+        <Route path="/" element={<Energy />} />
        
       </Routes>
-    {/* <Footer/> */}
+    <Footer/>
     </>
   </Router>
 

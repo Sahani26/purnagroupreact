@@ -207,6 +207,10 @@ div#menuopen img {
     width: 20px;
     padding: 0 12px;
 }
+.float i{
+    margin-top: 12px;
+    font-size: 35px;
+}
 @media (max-width:676px) {
     .header_area, .footer_content{
         width: 100%;
