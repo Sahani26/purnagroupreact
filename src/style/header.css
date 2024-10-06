@@ -221,9 +221,9 @@ div#menuopen img {
         flex-direction: column;
 
     }
-    .float_call i{
+    .float_call i,.float i{
         margin-top: 16px;
-        font-size: 17px;
+        font-size: 20px;
     }
 
     .head_plane{

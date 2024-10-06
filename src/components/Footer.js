@@ -82,7 +82,7 @@ export default function Footer() {
                         </div>
                         <div className="whatsapp_link">
                             <a href="https://wa.me/7069628193" className="float" target="_blank" rel="noopener noreferrer">
-                                <i className="fa fa-whatsapp my-float"></i>
+                            <i class="fa-brands fa-whatsapp"></i>
                             </a>
                         </div>
                         <div className="call_link">
