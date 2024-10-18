@@ -3,7 +3,7 @@
  import Header from "./components/Header";
  import Energy from "./components/Energy";
  import Footer from './components/Footer';
- import Service from './components/Ourservices';
+ import Service from './components/OurServices';
  
  
  
