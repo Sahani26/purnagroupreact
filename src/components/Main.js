@@ -79,7 +79,7 @@ const Main = () => {
           <div className="wel_pict header_page_area">
             <div className="welcome_cotain">
               <h1 className="animate__animated animate__bounceInLeft">
-                Welcome To <span>We are engaged in manufacturing and supplying of a wide range of Insulation Component</span>
+                Welcome To <span> We are engaged in manufacturing and supplying of a wide range of Insulation Component</span>
               </h1>
               <a className="btn btn-hero animate__animated animate__bounceInLeft" href="./contactus.html">Contact Us</a>
             </div>
