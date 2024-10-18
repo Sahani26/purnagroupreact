@@ -29,11 +29,11 @@ export default function Header() {
                             </div>
                             <div className="header_option">
                                 <ul>
-                                    <li><a href="./main_page.html">HOME</a></li>
-                                    <li><a href="./power_product.html">POWER PRODUCTS</a></li>
-                                    <li><a href="./energy_product.html">ENERGY PRODUCTS</a></li>
-                                    <li><a href="./our_service.html">OUR SERVICES</a></li>
-                                    <li><a href="./contactus.html">CONTACT US</a></li>
+                                    <li><a href="./">HOME</a></li>
+                                    <li><a href="./power">POWER PRODUCTS</a></li>
+                                    <li><a href="./energy">ENERGY PRODUCTS</a></li>
+                                    <li><a href="./service">OUR SERVICES</a></li>
+                                    <li><a href="./contactus">CONTACT US</a></li>
                                 </ul>
                             </div>
                         </div>
