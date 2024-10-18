@@ -2,7 +2,8 @@
  import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
  import Header from "./components/Header";
  import Energy from "./components/Energy";
- import Footer from './components/Footer'
+ import Footer from './components/Footer';
+ import Service from './components/OurServices';
  
  
  
@@ -12,7 +13,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Energy />} />
+        <Route path="/" element={<Service />} />
        
       </Routes>
     <Footer/>
