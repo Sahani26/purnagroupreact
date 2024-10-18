@@ -5,7 +5,7 @@
  import Footer from './components/Footer';
  import Service from './components/OurServices';
   import Power from './components/PowerProduct';
- 
+  import Main from './components/Main';
  
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Power />} />
+        <Route path="/" element={<Main />} />
        
       </Routes>
     <Footer/>
