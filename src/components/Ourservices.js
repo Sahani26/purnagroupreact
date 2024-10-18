@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './OurServices.css'; // Import your CSS file for styles
+ 
+import '../style/OurServices.css'
 
 const OurServices = () => {
     const [menuOpen, setMenuOpen] = useState(false);
