@@ -14,12 +14,9 @@ function App() {
       <>
         <Header />
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/energy" element={<Energy />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/power" element={<Power />} />
+        
     <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} /> {/* Handle unmatched routes */}
+ 
         </Routes>
         <Footer />
       </>
