@@ -4,7 +4,7 @@
  import Energy from "./components/Energy";
  import Footer from './components/Footer';
  import Service from './components/OurServices';
- 
+  import Power from './components/PowerProduct';
  
  
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Service />} />
+        <Route path="/" element={<Power />} />
        
       </Routes>
     <Footer/>
