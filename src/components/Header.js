@@ -1,25 +1,74 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../style/header.css";
 import mainlogo from "../assets/mainlogo.png";
 import menu from "../assets/menu.png";
 import close from "../assets/close.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Changed to false to indicate the menu is closed by default
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [headerClass, setHeaderClass] = useState('scroll-down');
 
+    // Toggle menu open/close
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    // Handle scroll effect
+    const handleScroll = () => {
+        const st = window.scrollY;
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+
+        if (Math.abs(scrollPosition - st) > 5) {
+            if (st > scrollPosition && st > headerHeight) {
+                setHeaderClass('scroll-up');
+            } else if (st + windowHeight < documentHeight) {
+                setHeaderClass('scroll-down');
+            }
+            setScrollPosition(st);
+        }
+    };
+
+    useEffect(() => {
+        // Scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Cleanup on unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [scrollPosition]);
+
+    useEffect(() => {
+        // Background scroll effect
+        const handleBackgroundScroll = () => {
+            const header = document.querySelector('.header_page_area');
+            if (header) {
+                const scrollY = window.scrollY;
+                const adjustmentFactor = 100;
+                const baseValue = -20;
+                header.style.backgroundPositionY = `${baseValue * (scrollY / adjustmentFactor)}px`;
+            }
+        };
+
+        window.addEventListener('scroll', handleBackgroundScroll);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('scroll', handleBackgroundScroll);
+        };
+    }, []);
+
     return (
         <>
-            <header>
+            <header className={headerClass}>
                 <div className="head_plane webheader">
                     <div className="header_area">
                         <div className="hrader_items">
                             <div className="main_logo">
-                                <img src={mainlogo} alt="" />
+                                <img src={mainlogo} alt="Main Logo" />
                             </div>
                         </div>
 
@@ -37,9 +86,10 @@ export default function Header() {
                                 </ul>
                             </div>
                         </div>
+
                         <div className="hrader_items">
                             <div className="sub_logo">
-                                <img src="https://teslapowerusa.com/assets/images/tesla-logo-1.png" alt="" />
+                                <img src="https://teslapowerusa.com/assets/images/tesla-logo-1.png" alt="Sub Logo" />
                             </div>
                         </div>
                     </div>
@@ -50,19 +100,19 @@ export default function Header() {
                         <div className="header_area">
                             <div className="hrader_items">
                                 <div className="main_logo">
-                                    <img src={mainlogo} alt="" />
+                                    <img src={mainlogo} alt="Main Logo" />
                                 </div>
                             </div>
                             <div className="hrader_items">
                                 <div className="sub_logo">
                                     <a href="./main_page.html">
-                                        <img src="https://teslapowerusa.com/assets/images/tesla-logo-1.png" alt="" />
+                                        <img src="https://teslapowerusa.com/assets/images/tesla-logo-1.png" alt="Sub Logo" />
                                     </a>
                                 </div>
                             </div>
                             <div className="menuline" id="menuopen">
                                 <button onClick={toggleMenu}>
-                                    <img src={menu} alt="" />
+                                    <img src={menu} alt="Menu Icon" />
                                 </button>
                             </div>
                         </div>
@@ -70,7 +120,7 @@ export default function Header() {
                     <div className={isMenuOpen ? 'hrader_items mobile_mennnu menu_on' : 'hrader_items mobile_mennnu'}>
                         <div className="closer_menu" id="close_menu">
                             <button onClick={toggleMenu}>
-                              close
+                                close
                             </button>
                         </div>
                         <div className="header_option">
